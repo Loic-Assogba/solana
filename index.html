@@ -3,244 +3,181 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>Solana</title>
+
         <script src="https://cdn.tailwindcss.com"></script>
+
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
     </head>
+
     <body
-        class="font-[Inter] bg-gradient-to-r from-black via-black to-pink-900"
+        class="font-[Inter] bg-gradient-to-r from-black via-black to-pink-900 text-white"
     >
-        <header class="bg-black text-white flex justify-between py-3 px-4">
-            <div>
-                <div class="space-x-2 flex md:mx-5 lg:mx-12">
-                    <a href="#"
-                        ><img src="images/Logo Solana.png" alt="Solana Logo"
-                    /></a>
-                    <a href="#">SOLANA</a>
-                </div>
-            </div>
+        <!-- HEADER -->
 
-            <div class="block md:hidden">
-                <a href="#"
-                    ><img
-                        src="icons/menu-wide.svg"
-                        alt="Icons"
-                        class="bg-gray-600 rounded-full p-1"
-                /></a>
-            </div>
-
-            <nav
-                class="hidden md:flex space-x-5 text-gray-500 md:mx-5 lg:mx-12"
+        <header class="bg-black">
+            <div
+                class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
             >
-                <a href="#">Learn</a>
-                <a href="#" class="text-white">Build</a>
-                <a href="#">Network</a>
-                <a href="#">Community</a>
-            </nav>
+                <div class="flex items-center gap-2">
+                    <img src="images/Logo Solana.png" class="w-8 md:w-10" />
+
+                    <span class="font-semibold">SOLANA</span>
+                </div>
+
+                <!-- NAV DESKTOP -->
+
+                <nav class="hidden md:flex gap-8 text-gray-400">
+                    <a href="#" class="hover:text-white">Learn</a>
+
+                    <a href="#" class="text-white">Build</a>
+
+                    <a href="#" class="hover:text-white">Network</a>
+
+                    <a href="#" class="hover:text-white">Community</a>
+                </nav>
+
+                <!-- MENU MOBILE -->
+
+                <button id="menuBtn" class="md:hidden">
+                    <img
+                        src="icons/menu-wide.svg"
+                        class="bg-gray-600 rounded-full p-1 w-8"
+                    />
+                </button>
+            </div>
+
+            <!-- NAV MOBILE -->
+
+            <div
+                id="mobileMenu"
+                class="hidden flex-col text-center bg-black text-gray-300 md:hidden"
+            >
+                <a class="py-3 border-t border-gray-800">Learn</a>
+
+                <a class="py-3 border-t border-gray-800 text-white">Build</a>
+
+                <a class="py-3 border-t border-gray-800">Network</a>
+
+                <a class="py-3 border-t border-gray-800">Community</a>
+            </div>
         </header>
 
-        <section
-            class="bg-gradient-to-r from-black via-black to-pink-900 text-white lg:flex justify-between"
-        >
-            <div>
-                <div class="ml-3">
-                    <h1
-                        class="mt-10 font-medium text-4xl m-4 md:text-5xl lg:text-6xl"
-                    >
-                        Developer <br />
-                        Resources
-                    </h1>
-                    <p class="m-3 text-sm font-extralight">
-                        A manual for joining the Solana <br />
-                        escosystem. By builders for builders
-                    </p>
-                    <br />
-                </div>
+        <!-- HERO -->
 
-                <div class="ml-3 md:flex">
+        <section
+            class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16 gap-10"
+        >
+            <div class="max-w-xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+                    Developer <br />
+                    Resources
+                </h1>
+
+                <p class="text-gray-300 mb-8">
+                    A manual for joining the Solana ecosystem. By builders for
+                    builders.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
                     <button
-                        class="bg-green-400 text-black text-sm rounded-full inline-block p-1 m-1 px-5"
+                        class="bg-green-400 text-black px-6 py-2 rounded-full font-medium"
                     >
                         BUILD NOW
                     </button>
+
                     <button
-                        class="bg-black border-gray-200 rounded-full px-4 py-1 border text-sm font-thin flex gap-2 m-1 space-x-4"
+                        class="border border-gray-400 px-6 py-2 rounded-full flex items-center gap-2"
                     >
                         STACK EXCHANGE
-                        <img src="icons/Stack Exchange.svg" alt="icons" />
+
+                        <img src="icons/Stack Exchange.svg" class="w-4" />
                     </button>
                 </div>
             </div>
 
-            <div class="justify-center">
-                <img src="images/IMAGE (1).png" alt="image" />
+            <div>
+                <img src="images/IMAGE (1).png" class="w-full max-w-md" />
             </div>
         </section>
 
-        <section
-            class="my-5 mx-3 grid grid-cols-3 gap-2 sm:grid-cols-4 md:flex md:flex-wrap md:justify-center md:gap-5 lg:px-20 lg:gap-10"
-        >
-            <img src="img/brave.png" alt="brave" class="w-16 sm:w-20 xl:w-28" />
-            <img
-                src="img/circle.png"
-                alt="circle"
-                class="w-16 sm:w-20 xl:w-28"
-            />
-            <img
-                src="img/discord.png"
-                alt="discord"
-                class="w-16 sm:w-20 xl:w-28"
-            />
-            <img
-                src="img/google.png"
-                alt="google"
-                class="w-16 sm:w-20 xl:w-28"
-            />
-            <img src="img/jump.png" alt="jump" class="w-16 sm:w-20 xl:w-28" />
-            <img
-                src="img/mazalaza.png"
-                alt="mazalaza"
-                class="w-16 sm:w-20 xl:w-28"
-            />
-            <img src="img/magic.png" alt="magic" class="w-16 sm:w-20 xl:w-28" />
-        </section>
-        <footer
-            class="bg-[rgba(0,5,8,1)] h-[400px] mt-30 py-10 px-5 hidden md:flex md:justify-center gap-5"
-        >
-            <article class="flex flex-col gap-2">
-                <img src="images/Logo Solana.png" alt="solana" class="w-12" />
-                <p>Managed by Solana Foundation</p>
+        <!-- PARTNERS -->
 
-                <div class="flex gap-2 mt-3">
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-youtube text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"
-                                />
-                            </svg></button
-                    ></a>
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-twitter text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"
-                                />
-                            </svg></button
-                    ></a>
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-discord text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
-                                />
-                            </svg></button
-                    ></a>
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-reddit text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"
-                                />
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"
-                                />
-                            </svg></button
-                    ></a>
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-github text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                                />
-                            </svg></button
-                    ></a>
-                    <a href="#"
-                        ><button
-                            class="border border-[rgba(132,136,149,1)] bg-[rgba(132,136,149,1)] px-1"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="25"
-                                height="25"
-                                fill="currentColor"
-                                class="bi bi-telegram text-black"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
-                                />
-                            </svg></button
-                    ></a>
+        <section
+            class="max-w-6xl mx-auto px-6 py-10 flex flex-wrap justify-center items-center gap-10"
+        >
+            <img src="img/brave.png" class="w-16 md:w-20" />
+            <img src="img/circle.png" class="w-16 md:w-20" />
+            <img src="img/discord.png" class="w-16 md:w-20" />
+            <img src="img/google.png" class="w-16 md:w-20" />
+            <img src="img/jump.png" class="w-16 md:w-20" />
+            <img src="img/mazalaza.png" class="w-16 md:w-20" />
+            <img src="img/magic.png" class="w-16 md:w-20" />
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="bg-[rgba(0,5,8,1)]">
+            <div
+                class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between gap-10"
+            >
+                <div class="max-w-sm">
+                    <img src="images/Logo Solana.png" class="w-12 mb-4" />
+
+                    <p class="text-gray-400 mb-6">
+                        Managed by Solana Foundation
+                    </p>
+
+                    <div class="flex gap-3">
+                        <button class="bg-gray-500 p-2 rounded">SVG</button>
+
+                        <button class="bg-gray-500 p-2 rounded">SVG</button>
+
+                        <button class="bg-gray-500 p-2 rounded">SVG</button>
+
+                        <button class="bg-gray-500 p-2 rounded">SVG</button>
+                    </div>
+
+                    <p class="text-gray-400 text-sm mt-6">
+                        ©2023 Solana Foundation.
+                    </p>
                 </div>
-                <div class="flex mt-4">
-                    <p>©2023 Solana Foundation. All rights reserved.</p>
+
+                <div class="grid grid-cols-2 gap-16">
+                    <div class="flex flex-col gap-4 text-gray-400">
+                        <span class="text-white">SOLANA</span>
+
+                        <a>Grants</a>
+                        <a>Break Solana</a>
+                        <a>Media Kit</a>
+                        <a>Careers</a>
+                        <a>Disclaimer</a>
+                    </div>
+
+                    <div class="flex flex-col gap-4 text-gray-400">
+                        <span class="text-white">GET CONNECTED</span>
+
+                        <a>Ecosystem</a>
+                        <a>Blog</a>
+                        <a>Newsletter</a>
+                    </div>
                 </div>
-            </article>
-            <article class="grid grid-cols-2 gap-5 mt-4">
-                <div class="flex flex-col gap-5 text-white/50">
-                    <a href="#" class="text-white">SOLANA</a>
-                    <a href="#">Grants</a>
-                    <a href="#">Break Solana</a>
-                    <a href="#">Media Kit</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Disclaimer</a>
-                </div>
-                <div class="flex flex-col gap-5 text-white/50">
-                    <a href="#" class="text-white">GET CONNECTED</a>
-                    <a href="#">Ecosystem</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Newsletter</a>
-                </div>
-            </article>
+            </div>
         </footer>
+
+        <!-- SCRIPT MENU MOBILE -->
+
+        <script>
+            const btn = document.getElementById('menuBtn');
+            const menu = document.getElementById('mobileMenu');
+
+            btn.onclick = () => {
+                menu.classList.toggle('hidden');
+            };
+        </script>
     </body>
 </html>
