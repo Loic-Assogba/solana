@@ -15,56 +15,97 @@
     </head>
 
     <body
-        class="font-[Inter] bg-gradient-to-r from-black via-black to-pink-900 text-white"
+        class="font-[Inter] bg-gradient-to-r from-black via-black to-pink-900 text-white pt-24"
     >
         <!-- HEADER -->
 
-        <header class="bg-black">
+        <header
+            id="header"
+            class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-lg transition-all duration-300"
+        >
             <div
                 class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
             >
-                <div class="flex items-center gap-2">
-                    <img src="images/Logo Solana.png" class="w-8 md:w-10" />
+                <!-- Logo -->
 
-                    <span class="font-semibold">SOLANA</span>
+                <div class="flex items-center gap-2">
+                    <img src="images/Logo Solana.png" class="w-10" />
+
+                    <span class="font-semibold tracking-wider"> SOLANA </span>
                 </div>
 
-                <!-- NAV DESKTOP -->
+                <!-- Navigation Desktop -->
 
-                <nav class="hidden md:flex gap-8 text-gray-400">
-                    <a href="#" class="hover:text-white">Learn</a>
+                <nav class="hidden md:flex items-center gap-8 text-gray-300">
+                    <a href="#" class="hover:text-green-400 transition">
+                        Learn
+                    </a>
 
-                    <a href="#" class="text-white">Build</a>
+                    <a href="#" class="text-green-400"> Build </a>
 
-                    <a href="#" class="hover:text-white">Network</a>
+                    <a href="#" class="hover:text-green-400 transition">
+                        Network
+                    </a>
 
-                    <a href="#" class="hover:text-white">Community</a>
+                    <a href="#" class="hover:text-green-400 transition">
+                        Community
+                    </a>
                 </nav>
 
-                <!-- MENU MOBILE -->
+                <!-- Bouton Menu -->
 
-                <button id="menuBtn" class="md:hidden">
-                    <img
-                        src="icons/menu-wide.svg"
-                        class="bg-gray-600 rounded-full p-1 w-8"
-                    />
+                <button
+                    id="menuBtn"
+                    class="md:hidden flex flex-col justify-center gap-1.5"
+                >
+                    <span
+                        class="line w-7 h-0.5 bg-white transition-all duration-300"
+                    ></span>
+
+                    <span
+                        class="line w-7 h-0.5 bg-white transition-all duration-300"
+                    ></span>
+
+                    <span
+                        class="line w-7 h-0.5 bg-white transition-all duration-300"
+                    ></span>
                 </button>
             </div>
 
-            <!-- NAV MOBILE -->
+            <!-- Menu Mobile -->
 
-            <div
+            <nav
                 id="mobileMenu"
-                class="hidden flex-col text-center bg-black text-gray-300 md:hidden"
+                class="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl overflow-hidden max-h-0 transition-all duration-500 md:hidden"
             >
-                <a class="py-3 border-t border-gray-800">Learn</a>
+                <a
+                    href="#"
+                    class="mobile-link block px-6 py-4 hover:bg-gray-900"
+                >
+                    Learn
+                </a>
 
-                <a class="py-3 border-t border-gray-800 text-white">Build</a>
+                <a
+                    href="#"
+                    class="mobile-link block px-6 py-4 text-green-400 hover:bg-gray-900"
+                >
+                    Build
+                </a>
 
-                <a class="py-3 border-t border-gray-800">Network</a>
+                <a
+                    href="#"
+                    class="mobile-link block px-6 py-4 hover:bg-gray-900"
+                >
+                    Network
+                </a>
 
-                <a class="py-3 border-t border-gray-800">Community</a>
-            </div>
+                <a
+                    href="#"
+                    class="mobile-link block px-6 py-4 hover:bg-gray-900"
+                >
+                    Community
+                </a>
+            </nav>
         </header>
 
         <section
@@ -178,12 +219,57 @@
         </footer>
 
         <script>
-            const btn = document.getElementById('menuBtn');
-            const menu = document.getElementById('mobileMenu');
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const lines = document.querySelectorAll('.line');
+            const links = document.querySelectorAll('.mobile-link');
 
-            btn.onclick = () => {
-                menu.classList.toggle('hidden');
-            };
+            let isOpen = false;
+
+            menuBtn.addEventListener('click', () => {
+                isOpen = !isOpen;
+
+                if (isOpen) {
+                    mobileMenu.classList.remove('max-h-0');
+                    mobileMenu.classList.add('max-h-96');
+
+                    lines[0].classList.add('rotate-45', 'translate-y-2');
+                    lines[1].classList.add('opacity-0');
+                    lines[2].classList.add('-rotate-45', '-translate-y-2');
+                } else {
+                    mobileMenu.classList.remove('max-h-96');
+                    mobileMenu.classList.add('max-h-0');
+
+                    lines[0].classList.remove('rotate-45', 'translate-y-2');
+                    lines[1].classList.remove('opacity-0');
+                    lines[2].classList.remove('-rotate-45', '-translate-y-2');
+                }
+            });
+
+            links.forEach((link) => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('max-h-96');
+                    mobileMenu.classList.add('max-h-0');
+
+                    lines[0].classList.remove('rotate-45', 'translate-y-2');
+                    lines[1].classList.remove('opacity-0');
+                    lines[2].classList.remove('-rotate-45', '-translate-y-2');
+
+                    isOpen = false;
+                });
+            });
+
+            // Ombre du header au scroll
+
+            const header = document.getElementById('header');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-2xl');
+                } else {
+                    header.classList.remove('shadow-2xl');
+                }
+            });
         </script>
     </body>
 </html>
