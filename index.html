@@ -14,6 +14,26 @@
         />
     </head>
 
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+
     <body
         class="font-[Inter] bg-gradient-to-r from-black via-black to-pink-900 text-white pt-24"
     >
@@ -21,7 +41,7 @@
 
         <header
             id="header"
-            class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-lg transition-all duration-300"
+            class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-lg transition-all duration-300 md:px-4"
         >
             <div
                 class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
@@ -108,29 +128,53 @@
             </nav>
         </header>
 
-        <section
-            class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 py-16 gap-10"
-        >
-            <div class="max-w-xl">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
-                    Developer <br />
-                    Resources
-                </h1>
+        <!-- HERO -->
 
-                <p class="text-gray-300 mb-8">
-                    A manual for joining the Solana ecosystem. By builders for
-                    builders.
+        <section
+            class="max-w-7xl mx-auto min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 pt-4 pb-20 gap-16"
+        >
+            <!-- Texte -->
+
+            <div
+                id="heroText"
+                class="max-w-xl opacity-0 translate-y-10 transition-all duration-1000"
+            >
+                <p
+                    class="uppercase tracking-[6px] text-green-400 text-sm mb-4 font-semibold"
+                >
+                    Solana Documentation
                 </p>
 
-                <div class="flex flex-wrap gap-4">
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+                >
+                    Developer <br />
+
+                    <span
+                        class="bg-gradient-to-r from-green-400 via-cyan-400 to-pink-500 bg-clip-text text-transparent"
+                    >
+                        Resources
+                    </span>
+                </h1>
+
+                <p class="text-gray-400 text-lg leading-8 mb-10">
+                    A manual for joining the Solana ecosystem. Build fast, scale
+                    infinitely and create the next generation of Web3
+                    applications.
+                </p>
+
+                <div
+                    id="heroButtons"
+                    class="flex flex-wrap gap-5 opacity-0 translate-y-10 transition-all duration-1000 delay-300"
+                >
                     <button
-                        class="bg-green-400 text-black px-6 py-2 rounded-full font-medium"
+                        class="bg-green-400 hover:bg-green-300 text-black font-semibold px-8 py-3 rounded-full transition duration-300 hover:scale-105"
                     >
                         BUILD NOW
                     </button>
 
                     <button
-                        class="border border-gray-400 px-6 py-2 rounded-full flex items-center gap-2"
+                        class="border border-gray-600 hover:border-green-400 hover:text-green-400 px-8 py-3 rounded-full flex items-center gap-3 transition duration-300"
                     >
                         STACK EXCHANGE
 
@@ -139,8 +183,22 @@
                 </div>
             </div>
 
-            <div>
-                <img src="images/IMAGE (1).png" class="w-full max-w-md" />
+            <!-- Image -->
+
+            <div
+                id="heroImage"
+                class="relative opacity-0 translate-y-10 transition-all duration-1000 delay-500"
+            >
+                <!-- Halo lumineux -->
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-green-500/20 via-cyan-500/20 to-pink-500/20 blur-[90px] rounded-full"
+                ></div>
+
+                <img
+                    src="images/IMAGE (1).png"
+                    class="relative w-full max-w-lg animate-float"
+                />
             </div>
         </section>
 
@@ -269,6 +327,19 @@
                 } else {
                     header.classList.remove('shadow-2xl');
                 }
+            });
+            window.addEventListener('load', () => {
+                document
+                    .getElementById('heroText')
+                    .classList.remove('opacity-0', 'translate-y-10');
+
+                document
+                    .getElementById('heroButtons')
+                    .classList.remove('opacity-0', 'translate-y-10');
+
+                document
+                    .getElementById('heroImage')
+                    .classList.remove('opacity-0', 'translate-y-10');
             });
         </script>
     </body>
