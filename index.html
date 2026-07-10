@@ -372,6 +372,122 @@
             </div>
         </section>
 
+        <!-- ===================== STATS ===================== -->
+
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <!-- Titre -->
+
+            <div
+                id="statsTitle"
+                class="text-center opacity-0 translate-y-10 transition-all duration-700"
+            >
+                <p class="uppercase tracking-[5px] text-green-400 text-sm">
+                    NETWORK STATS
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">
+                    The Numbers
+                    <span
+                        class="bg-gradient-to-r from-green-400 via-cyan-400 to-pink-500 bg-clip-text text-transparent"
+                    >
+                        Speak
+                    </span>
+                </h2>
+
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+                    Solana powers one of the fastest and most scalable
+                    blockchain ecosystems in the world.
+                </p>
+            </div>
+
+            <!-- Cartes -->
+
+            <div
+                id="statsCards"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 opacity-0 translate-y-10 transition-all duration-1000"
+            >
+                <!-- Card 1 -->
+
+                <div
+                    class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center hover:border-green-400 hover:-translate-y-2 transition duration-300"
+                >
+                    <i
+                        data-lucide="activity"
+                        class="w-12 h-12 mx-auto text-green-400 mb-6"
+                    ></i>
+
+                    <h3
+                        class="text-5xl font-bold mb-3 counter"
+                        data-target="65"
+                    >
+                        0
+                    </h3>
+
+                    <p class="text-gray-400">Million Transactions</p>
+                </div>
+
+                <!-- Card 2 -->
+
+                <div
+                    class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center hover:border-cyan-400 hover:-translate-y-2 transition duration-300"
+                >
+                    <i
+                        data-lucide="timer"
+                        class="w-12 h-12 mx-auto text-cyan-400 mb-6"
+                    ></i>
+
+                    <h3
+                        class="text-5xl font-bold mb-3 counter"
+                        data-target="400"
+                    >
+                        0
+                    </h3>
+
+                    <p class="text-gray-400">Milliseconds Block Time</p>
+                </div>
+
+                <!-- Card 3 -->
+
+                <div
+                    class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center hover:border-pink-500 hover:-translate-y-2 transition duration-300"
+                >
+                    <i
+                        data-lucide="users"
+                        class="w-12 h-12 mx-auto text-pink-500 mb-6"
+                    ></i>
+
+                    <h3
+                        class="text-5xl font-bold mb-3 counter"
+                        data-target="2000"
+                    >
+                        0
+                    </h3>
+
+                    <p class="text-gray-400">Active Developers</p>
+                </div>
+
+                <!-- Card 4 -->
+
+                <div
+                    class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center hover:border-yellow-400 hover:-translate-y-2 transition duration-300"
+                >
+                    <i
+                        data-lucide="globe"
+                        class="w-12 h-12 mx-auto text-yellow-400 mb-6"
+                    ></i>
+
+                    <h3
+                        class="text-5xl font-bold mb-3 counter"
+                        data-target="100"
+                    >
+                        0
+                    </h3>
+
+                    <p class="text-gray-400">Countries</p>
+                </div>
+            </div>
+        </section>
+
         <!-- FOOTER -->
 
         <footer class="bg-[rgba(0,5,8,1)]">
@@ -518,6 +634,64 @@
             observer.observe(document.getElementById('partners'));
             observer.observe(document.getElementById('whyTitle'));
             observer.observe(document.getElementById('cards'));
+
+            // Animation d'apparition
+
+            observer.observe(document.getElementById('statsTitle'));
+            observer.observe(document.getElementById('statsCards'));
+
+            // Animation des compteurs
+
+            const counters = document.querySelectorAll('.counter');
+
+            const counterObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        const counter = entry.target;
+
+                        const target = +counter.dataset.target;
+
+                        let current = 0;
+
+                        const increment = target / 80;
+
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+
+                                counter.innerText = Math.ceil(current);
+
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                if (target === 65) {
+                                    counter.innerText = '65M+';
+                                } else if (target === 400) {
+                                    counter.innerText = '400ms';
+                                } else if (target === 2000) {
+                                    counter.innerText = '2K+';
+                                } else if (target === 100) {
+                                    counter.innerText = '100+';
+                                }
+                            }
+                        };
+
+                        updateCounter();
+
+                        counterObserver.unobserve(counter);
+                    });
+                },
+                {
+                    threshold: 0.5,
+                }
+            );
+
+            counters.forEach((counter) => {
+                counterObserver.observe(counter);
+            });
+
+            // Initialise Lucide
 
             lucide.createIcons();
         </script>
