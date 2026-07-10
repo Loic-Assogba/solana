@@ -644,6 +644,135 @@
             </div>
         </section>
 
+        <!-- ===================== BUILD IN 3 STEPS ===================== -->
+
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <!-- Titre -->
+
+            <div
+                id="stepsTitle"
+                class="text-center opacity-0 translate-y-10 transition-all duration-700"
+            >
+                <p class="uppercase tracking-[5px] text-green-400 text-sm">
+                    GET STARTED
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-bold mt-4">
+                    Build in
+                    <span
+                        class="bg-gradient-to-r from-green-400 via-cyan-400 to-pink-500 bg-clip-text text-transparent"
+                    >
+                        Three Simple Steps
+                    </span>
+                </h2>
+
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+                    Start your Web3 journey with Solana in just a few simple
+                    steps.
+                </p>
+            </div>
+
+            <!-- Timeline -->
+
+            <div class="relative mt-24">
+                <!-- Ligne -->
+                <div
+                    class="hidden lg:block absolute top-10 left-0 w-full h-1 bg-gradient-to-r from-green-400 via-cyan-400 to-pink-500 rounded-full"
+                ></div>
+
+                <!-- Cards -->
+
+                <div
+                    id="stepsCards"
+                    class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative opacity-0 translate-y-10 transition-all duration-1000"
+                >
+                    <!-- STEP 1 -->
+
+                    <div
+                        class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:border-green-400 hover:-translate-y-2 transition-all duration-300"
+                    >
+                        <div
+                            class="w-20 h-20 rounded-full bg-green-400 flex items-center justify-center text-black font-bold text-2xl mx-auto relative z-10"
+                        >
+                            1
+                        </div>
+
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-green-400/20 flex items-center justify-center mt-8 group-hover:scale-110 transition"
+                        >
+                            <i
+                                data-lucide="download"
+                                class="w-8 h-8 text-green-400"
+                            ></i>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mt-8">Install SDK</h3>
+
+                        <p class="text-gray-400 mt-4 leading-7">
+                            Download the official Solana SDK and configure your
+                            development environment.
+                        </p>
+                    </div>
+
+                    <!-- STEP 2 -->
+
+                    <div
+                        class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:border-cyan-400 hover:-translate-y-2 transition-all duration-300"
+                    >
+                        <div
+                            class="w-20 h-20 rounded-full bg-cyan-400 flex items-center justify-center text-black font-bold text-2xl mx-auto relative z-10"
+                        >
+                            2
+                        </div>
+
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-cyan-400/20 flex items-center justify-center mt-8 group-hover:scale-110 transition"
+                        >
+                            <i
+                                data-lucide="code-2"
+                                class="w-8 h-8 text-cyan-400"
+                            ></i>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mt-8">Build</h3>
+
+                        <p class="text-gray-400 mt-4 leading-7">
+                            Develop your smart contract or decentralized
+                            application using Solana tools.
+                        </p>
+                    </div>
+
+                    <!-- STEP 3 -->
+
+                    <div
+                        class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:border-pink-500 hover:-translate-y-2 transition-all duration-300"
+                    >
+                        <div
+                            class="w-20 h-20 rounded-full bg-pink-500 flex items-center justify-center text-black font-bold text-2xl mx-auto relative z-10"
+                        >
+                            3
+                        </div>
+
+                        <div
+                            class="w-16 h-16 mx-auto rounded-2xl bg-pink-500/20 flex items-center justify-center mt-8 group-hover:scale-110 transition"
+                        >
+                            <i
+                                data-lucide="rocket"
+                                class="w-8 h-8 text-pink-500"
+                            ></i>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mt-8">Deploy</h3>
+
+                        <p class="text-gray-400 mt-4 leading-7">
+                            Launch your project on the Solana blockchain and
+                            reach millions of users worldwide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FOOTER -->
 
         <footer class="bg-[rgba(0,5,8,1)]">
@@ -797,6 +926,8 @@
             observer.observe(document.getElementById('statsCards'));
             observer.observe(document.getElementById('resourcesTitle'));
             observer.observe(document.getElementById('resourcesCards'));
+            observer.observe(document.getElementById('stepsTitle'));
+            observer.observe(document.getElementById('stepsCards'));
 
             // Animation des compteurs
 
